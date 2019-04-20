@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "336829406563",
+    "firebase_url": "https://apnichoice-a1871.firebaseio.com",
+    "project_id": "apnichoice-a1871",
+    "storage_bucket": "apnichoice-a1871.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336829406563:android:9eb115a0d74ce6f0",
+        "android_client_info": {
+          "package_name": "com.example.ankurbaranwal.apnichoice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336829406563-ea5bt1h1vmkehggfm8h24bd3iu8gdnj7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ankurbaranwal.apnichoice",
+            "certificate_hash": "97560f69b837ae8a3af425a1bf264987a42831e9"
+          }
+        },
+        {
+          "client_id": "336829406563-opkcjfhm4gopujh27e5mjlc59pcms5lk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzOm76Z3W7hQ-ENydlKDd6aG-FzV5gtXg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336829406563-opkcjfhm4gopujh27e5mjlc59pcms5lk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
