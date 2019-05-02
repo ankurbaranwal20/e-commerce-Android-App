@@ -11,6 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -26,11 +31,19 @@ public class RegisterActivity extends AppCompatActivity {
     private Button CreateAccountButton;
     private EditText InputName,InputPhoneNumber,InputPassword;
     private ProgressDialog loadingBar;
+    private AdView adView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        MobileAds.initialize(RegisterActivity.this,"ca-app-pub-9044775629101422~7585002201");
+        adView =(AdView)findViewById(R.id.adview);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
 
         CreateAccountButton = (Button)findViewById(R.id.register_btn);
         InputName = (EditText)findViewById(R.id.register_username_input);

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.ankurbaranwal.apnichoice.Model.Users;
 import com.example.ankurbaranwal.apnichoice.Prevalent.Prevalent;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        FirebaseApp.initializeApp(LoginActivity.this);
 
         LoginButton = (Button)findViewById(R.id.login_btn);
         InputPassword = (EditText)findViewById(R.id.login_password_input);

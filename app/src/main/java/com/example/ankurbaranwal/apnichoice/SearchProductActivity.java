@@ -26,6 +26,8 @@ public class SearchProductActivity extends AppCompatActivity {
     private EditText inputText;
     private RecyclerView searchList;
     private String SearchInput;
+    private DatabaseReference reference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +40,14 @@ public class SearchProductActivity extends AppCompatActivity {
 
         searchList.setLayoutManager(new LinearLayoutManager(SearchProductActivity.this));
 
+        reference = FirebaseDatabase.getInstance().getReference().child("Products");
+
+
         SearchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SearchInput = inputText.getText().toString();
 
+                SearchInput = inputText.getText().toString();
                 onStart();
             }
         });
@@ -53,9 +58,6 @@ public class SearchProductActivity extends AppCompatActivity {
     protected void onStart() {
 
         super.onStart();
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference()
-                .child("Products");
 
         FirebaseRecyclerOptions<Product> options = new FirebaseRecyclerOptions.Builder<Product>()
                 .setQuery(reference.orderByChild("pname").startAt(SearchInput),Product.class).build();
@@ -88,6 +90,8 @@ public class SearchProductActivity extends AppCompatActivity {
                         return holder;
                     }
                 };
+
         searchList.setAdapter(adapter);
+        adapter.startListening();
     }
 }

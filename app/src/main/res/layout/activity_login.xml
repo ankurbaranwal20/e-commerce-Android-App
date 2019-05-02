@@ -27,7 +27,7 @@
         android:hint="Phone Number"
         android:inputType="number"
         android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorHint="@android:color/white"
         android:textSize="17sp"
         android:textStyle="bold"/>
 
@@ -44,7 +44,7 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorHint="@android:color/white"
         android:textSize="17sp"
         android:textStyle="bold"/>
 

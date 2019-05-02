@@ -12,6 +12,11 @@ import android.widget.Toast;
 
 import com.example.ankurbaranwal.apnichoice.Model.Users;
 import com.example.ankurbaranwal.apnichoice.Prevalent.Prevalent;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,12 +28,21 @@ import io.paperdb.Paper;
 public class MainActivity extends AppCompatActivity {
 
     private Button joinNowButton, loginButton;
+    private AdView adView;
+
 
     private ProgressDialog loadingBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MobileAds.initialize(MainActivity.this,"ca-app-pub-9044775629101422~7585002201");
+        adView =(AdView)findViewById(R.id.adview);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
+
 
         joinNowButton = (Button)findViewById(R.id.main_join_now_btn);
         loginButton = (Button)findViewById(R.id.main_login_btn);
